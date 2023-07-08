@@ -1,12 +1,11 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Auth\Events\Registered;
-use App\Providers\RouteServiceProvider;
 use Laravel\Socialite\Facades\Socialite;
-use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +37,7 @@ require __DIR__.'/auth.php';
 Route::get('/auth/redirect', function () {
     return Socialite::driver('google')->redirect();
 })->name('google.redirect');
- 
+
 Route::get('/auth/callback', function () {
     $googleUser = Socialite::driver('google')->user();
 
