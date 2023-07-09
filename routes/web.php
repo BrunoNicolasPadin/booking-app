@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -52,3 +53,5 @@ Route::get('/auth/callback', function () {
 
     return redirect(RouteServiceProvider::HOME);
 })->name('google.callback');
+
+Route::resource('bookings', BookingController::class);

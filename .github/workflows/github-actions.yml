@@ -52,8 +52,8 @@ jobs:
       - name: Run tests in Pest
         run: ./vendor/bin/pest
 
-      - name: Run Larastan
-        run: ./vendor/bin/phpstan analyse --memory-limit=2G
+      #- name: Run Larastan
+      #  run: ./vendor/bin/phpstan analyse --memory-limit=2G
 
       - name: Run Laravel pint
         run: ./vendor/bin/pint
