@@ -2,11 +2,11 @@
 
 namespace App\Http\Actions;
 
+use App\Http\Integrations\Hrb\HrbConnector;
+use App\Http\Integrations\Hrb\Requests\StoreBooking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
-use App\Http\Integrations\Hrb\HrbConnector;
-use App\Http\Integrations\Hrb\Requests\StoreBooking;
 
 class CloneBooking
 {

@@ -20,6 +20,7 @@ class BookingController extends Controller
         $user = Auth::user();
         $hrb = new HrbConnector();
         $response = $hrb->send(new GetMyBookings((string) $user->email));
+
         return view('bookings.show', [
             'bookings' => $response->json(),
         ]);
@@ -54,6 +55,7 @@ class BookingController extends Controller
     public function clone(Request $request)
     {
         CloneBooking::run($request);
+
         return back();
     }
 

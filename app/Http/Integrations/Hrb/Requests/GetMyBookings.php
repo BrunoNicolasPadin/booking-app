@@ -11,8 +11,8 @@ class GetMyBookings extends Request
      * Define the HTTP method
      */
     protected Method $method = Method::GET;
-    protected string|null $emailGuest;
 
+    protected string|null $emailGuest;
 
     public function __construct(string|null $emailGuest = null)
     {
