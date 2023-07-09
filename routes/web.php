@@ -55,3 +55,4 @@ Route::get('/auth/callback', function () {
 })->name('google.callback');
 
 Route::resource('bookings', BookingController::class);
+Route::post('bookings/clone', [BookingController::class, 'clone'])->name('bookings.clone');
