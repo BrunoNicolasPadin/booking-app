@@ -40,6 +40,7 @@ class BookingController extends Controller
         $request->merge(['nameGuest' => $user->name, 'emailGuest' => $user->email]);
         $hrb = new HrbConnector();
         $hrb->send(new StoreBooking($request));
+
         return back();
     }
 
