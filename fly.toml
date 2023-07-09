@@ -14,6 +14,7 @@ console_command = "php /var/www/html/artisan tinker"
 
 [env]
   APP_NAME= "Booking App"
+  APP_URL = "https://winter-wave-3671.fly.dev"
   APP_ENV = "production"
   APP_KEY= "base64:GWxyMmpxu/agCbh8dPVjmMzV54eXQ3majztYSf4S0Uc="
   BROADCAST_DRIVER=pusher
