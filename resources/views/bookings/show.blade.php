@@ -86,3 +86,5 @@
         </div>
     </div>
 </x-app-layout>
+
+@vite('resources/js/app.js')
