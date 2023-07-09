@@ -22,7 +22,7 @@ class BookingController extends Controller
     public function create(Request $request)
     {
         $hrb = new HrbConnector();
-        $response = $hrb->send(new GetRooms((string)$request->hotel, (int)$request->size, (int)$request->bath));
+        $response = $hrb->send(new GetRooms((string) $request->hotel, (int) $request->size, (int) $request->bath));
 
         return view('bookings.create', [
             'rooms' => $response->json('data'),

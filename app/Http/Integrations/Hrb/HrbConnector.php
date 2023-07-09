@@ -3,7 +3,6 @@
 namespace App\Http\Integrations\Hrb;
 
 use Saloon\Http\Connector;
-use Saloon\Contracts\HasPagination;
 use Saloon\Traits\Plugins\AcceptsJson;
 
 class HrbConnector extends Connector
@@ -12,8 +11,6 @@ class HrbConnector extends Connector
 
     /**
      * The Base URL of the API
-     *
-     * @return string
      */
     public function resolveBaseUrl(): string
     {
