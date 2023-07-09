@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Actions\CloneBooking;
 use App\Http\Integrations\Hrb\HrbConnector;
+use App\Http\Integrations\Hrb\Requests\GetMyBookings;
 use App\Http\Integrations\Hrb\Requests\GetRooms;
 use App\Http\Integrations\Hrb\Requests\StoreBooking;
 use Illuminate\Http\Request;
@@ -15,7 +17,12 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $hrb = new HrbConnector();
+        $response = $hrb->send(new GetMyBookings((string) $user->email));
+        return view('bookings.show', [
+            'bookings' => $response->json(),
+        ]);
     }
 
     /**
@@ -41,6 +48,12 @@ class BookingController extends Controller
         $hrb = new HrbConnector();
         $hrb->send(new StoreBooking($request));
 
+        return back();
+    }
+
+    public function clone(Request $request)
+    {
+        CloneBooking::run($request);
         return back();
     }
 
