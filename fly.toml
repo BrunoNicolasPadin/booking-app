@@ -13,7 +13,8 @@ console_command = "php /var/www/html/artisan tinker"
     PHP_VERSION = "8.1"
 
 [env]
-  APP_NAME= "Booking App"
+  APP_NAME = "Booking App"
+  APP_DEBUG = "false"
   APP_URL = "https://winter-wave-3671.fly.dev"
   APP_ENV = "production"
   APP_KEY= "base64:GWxyMmpxu/agCbh8dPVjmMzV54eXQ3majztYSf4S0Uc="
